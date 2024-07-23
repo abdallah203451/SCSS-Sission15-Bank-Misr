@@ -1,0 +1,14 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "colors";
+@import "spacing";
+@import "fonts";
+@import "sizes";
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,26 @@
+@function generate-shades($color, $steps: 9) {
+  $shades-map: ();
+  @for $i from 1 through $steps {
+    $percentage: $i * (1 / $steps);
+    $shade-name: $i * 100;
+    $shades-map: map-merge(
+      $shades-map,
+      (
+        "#{$shade-name}": darken($color, $percentage * 30%),
+      )
+    );
+  }
+  @return $shades-map;
+}
+
+@function spacing($scale) {
+  @return $scale * $spacing-unit;
+}
+
+@function font-size($scale) {
+  @return (0.5rem + $scale * 0.5rem);
+}
+
+@function size($scale) {
+  @return $scale * 10%;
+}

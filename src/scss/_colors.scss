@@ -1,0 +1,14 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// Generate color shades
+$colors: (
+  red: generate-shades($red),
+  blue: generate-shades($blue),
+  green: generate-shades($green),
+  orange: generate-shades($orange),
+  yellow: generate-shades($yellow),
+);
+
+@include generate-color-classes($colors);

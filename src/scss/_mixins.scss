@@ -1,0 +1,36 @@
+@mixin generate-spacing($name, $property, $scale) {
+  @for $i from 0 through $scale {
+    .#{$name}-#{$i} {
+      #{$property}: spacing($i);
+    }
+  }
+}
+
+@mixin generate-font-sizes($scale) {
+  @for $i from 0 through $scale {
+    .text-#{$i} {
+      font-size: font-size($i);
+    }
+  }
+}
+
+@mixin generate-sizes($name, $property, $scale) {
+  @for $i from 1 through $scale {
+    .#{$name}-#{$i} {
+      #{$property}: size($i);
+    }
+  }
+}
+
+@mixin generate-color-classes($colors) {
+  @each $name, $shades in $colors {
+    @each $shade-name, $shade-color in $shades {
+      .bg-#{$name}-#{$shade-name} {
+        background-color: $shade-color;
+      }
+      .text-#{$name}-#{$shade-name} {
+        color: $shade-color;
+      }
+    }
+  }
+}
